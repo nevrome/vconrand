@@ -20,4 +20,8 @@ fn main() {
     vconrand.rnorm(14.81, 2.73).str()
   )
 
+  println('vconrand.rnorm_n(5, 14.81, 2.73) = ' +
+    vconrand.rnorm_n(5, 14.81, 2.73).str()
+  )
+
 }

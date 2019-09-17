@@ -46,3 +46,13 @@ pub fn rnorm(mean f64, sd f64) f64 {
 
   return res
 }
+
+pub fn rnorm_n(n int, mean f64, sd f64) []f64 {
+
+  mut res := [f64(0)].repeat(n)
+  for i := 0; i < n; i++ {
+    res[i] = rnorm(mean, sd)
+  }
+
+  return res
+}

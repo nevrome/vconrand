@@ -16,4 +16,8 @@ fn main() {
     vconrand.runif_n(5, 384.12, 399.54).str()
   )
 
+  println('vconrand.rnorm(14.81, 2.73) = ' +
+    vconrand.rnorm(14.81, 2.73).str()
+  )
+
 }

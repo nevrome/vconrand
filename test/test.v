@@ -40,9 +40,9 @@ fn main() {
   )
 
   // sample
-  //println('vconrand.sample(arr, 5) = ' +
-  //  vconrand.sample(arr, 5).str()
-  //)
+  println('vconrand.sample_int(arr, 5) = ' +
+    vconrand.sample_int(arr, 5).str()
+  )
 
 }
 

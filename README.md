@@ -9,7 +9,7 @@ $ vpm init
 $ vpm get https://github.com/nevrome/vconrand vconrand
 ```
 
-## Examples
+## Quickstart
 
 ```v
 import vconrand
@@ -30,3 +30,5 @@ fn main() {
 
 }
 ```
+
+See `test/test.v` for some code that shows every function.

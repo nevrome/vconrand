@@ -147,3 +147,24 @@ fn find_ceil(arr[] int, r int, l int, h int) int {
 		if arr[le] >= r { res = le } else { res = -1 }
     return res
 }
+
+/**
+ * rarb_int_n - rarb_int but for an array of random values
+ *
+ * Uses rarb_int.
+ *
+ * @param n length of the resulting array
+ * @param arr[] array from which the output numbers are selected
+ * @param freq[] array of the same length n as arr[] that assigns a probability to that value
+ *
+ * @return an array of random values sampled from from arr[] based on the distribution in freq[]
+ */
+pub fn rarb_int_n(n int, arr[] int, freq[] int) []int {
+
+  mut res := [0].repeat(n)
+  for i := 0; i < n; i++ {
+    res[i] = rarb_int(arr, freq)
+  }
+
+  return res
+}

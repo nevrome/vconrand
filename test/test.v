@@ -35,6 +35,9 @@ fn main() {
   println('vconrand.rarb_int(arr, freq) = ' +
     vconrand.rarb_int(arr, freq).str()
   )
+  println('vconrand.rarb_int_n(5, arr, freq) = ' +
+    vconrand.rarb_int_n(5, arr, freq).str()
+  )
 
 }
 

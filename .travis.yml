@@ -1,0 +1,14 @@
+language: minimal
+
+before_install:
+  - mkdir module
+  - mv . module/
+  - wget https://github.com/vlang/v/archive/master.zip
+  - unzip master.zip
+  - cd v-master
+  - make
+  - cd ..
+
+script:
+  - v-master/v build module module/
+  - v-master/v run module/test/test.v

@@ -1,3 +1,5 @@
+[![Build Status](https://www.travis-ci.org/nevrome/vconrand.svg?branch=master)](https://www.travis-ci.org/nevrome/vconrand)
+
 # vconrand: Convenient random number generators for V
 A collection of useful, simple random number generators and sampling methods. I wrote this to make it more easy to translate R simulation code to V.
 

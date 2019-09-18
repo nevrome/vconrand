@@ -39,6 +39,11 @@ fn main() {
     vconrand.rarb_int_n(5, arr, freq).str()
   )
 
+  // sample
+  //println('vconrand.sample(arr, 5) = ' +
+  //  vconrand.sample(arr, 5).str()
+  //)
+
 }
 
 fn distribution_function(i int) int {

@@ -168,3 +168,9 @@ pub fn rarb_int_n(n int, arr[] int, freq[] int) []int {
 
   return res
 }
+
+//pub fn (arr []<T>) sample(size int, replace bool) ?T {
+//
+//  return arr[int(runif_n(0, arr.len).round())]
+//
+//}

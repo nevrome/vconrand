@@ -2,8 +2,8 @@ language: minimal
 
 before_install:
   # move module files to module directory
-  - mkdir module
-  - find . -maxdepth 1 -type f -print0 | xargs -0 mv -t ./module
+  - mkdir vconrand
+  - find . -maxdepth 1 -type f -print0 | xargs -0 mv -t ./vconrand
   # download and compile v
   - wget https://github.com/vlang/v/archive/master.zip
   - unzip master.zip
@@ -13,6 +13,6 @@ before_install:
 
 script:
   # build module
-  - v-master/v build module module/
+  - v-master/v build module vconrand
   # run test scripts
   - v-master/v run test/test.v

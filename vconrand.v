@@ -100,3 +100,50 @@ pub fn rnorm_n(n int, mean f64, sd f64) []f64 {
 
   return res
 }
+
+/**
+ * rarb_int - random number selector with an arbitrary distribution
+ *
+ * Returns a random number from arr[] according to the
+ * distribution array defined by freq[]. The code was translated from
+ * https://www.geeksforgeeks.org/random-number-generator-in-arbitrary-probability-distribution-fashion
+ *
+ * @param arr[] array from which the output numbers are selected
+ * @param freq[] array of the same length n as arr[] that assigns a probability to that value
+ *
+ * @return a random value sampled from arr[] based on the distribution in freq[]
+ */
+pub fn rarb_int(arr[] int, freq[] int) int {
+    if arr.len != freq.len {
+      error('arr and freq have to have the same length')
+    }
+    // get length
+    l := arr.len
+		// Create and fill prefix array
+    mut prefix := [0].repeat(l)
+    prefix[0] = freq[0]
+		for i := 1; i < l; i++ {
+      prefix[i] = prefix[i - 1] + freq[i]
+		}
+    // prefix[n-1] is sum of all frequencies. Generate a random number
+    // with value from 1 to this sum
+    r := (rand.next(prefix[l - 1])) + 1
+    // Find index of ceiling of r in prefix array
+  	indexc := find_ceil(prefix, r, 0, l - 1)
+    return arr[indexc]
+}
+
+// Utility function to find ceiling of r in arr[l..h]
+fn find_ceil(arr[] int, r int, l int, h int) int {
+		mut mid := 0
+		mut le := l
+		mut he := h
+		for {
+			mid = (le + he) / 2
+			if r > arr[mid] { le = mid + 1 }  else { he = mid }
+			if !(le < he) { break }
+		}
+		mut res := 0
+		if arr[le] >= r { res = le } else { res = -1 }
+    return res
+}

@@ -1,6 +1,7 @@
 import vconrand
 import rand
 import time
+import math
 
 fn main() {
 
@@ -22,4 +23,23 @@ fn main() {
     vconrand.rnorm_n(5, 14.81, 2.73).str()
   )
 
+  // arbitrary
+  mut arr := [0].repeat(200)
+	for i := 0; i < 200; i++ {
+		arr[i] = i
+	}
+  mut freq := [0].repeat(200)
+  for i := 0; i < 200; i++ {
+    freq[i] = distribution_function(i)
+  }
+  println('vconrand.rarb_int(arr, freq) = ' +
+    vconrand.rarb_int(arr, freq).str()
+  )
+
+}
+
+fn distribution_function(i int) int {
+  x := f64(i)
+  res := 10.0 * math.sin(0.1 * (x - 0.1)) + 10.0
+  return int(math.round(res))
 }

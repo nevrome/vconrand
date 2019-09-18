@@ -3,6 +3,18 @@ module vconrand
 import rand
 import math
 
+/**
+ * runif - random number generator with an uniform distribution
+ *
+ * The implemented solution most likely does not cover the full range
+ * of precision of f64, because it is limited to INT_MAX possible
+ * values.
+ *
+ * @param min lower limit of the distribution
+ * @param max upper limit of the distribution
+ *
+ * @return a random value between min and max
+ */
 pub fn runif(min f64, max f64) f64 {
 
   range := max - min
@@ -12,6 +24,17 @@ pub fn runif(min f64, max f64) f64 {
   return res
 }
 
+/**
+ * runif_n - runif but for an array of random values
+ *
+ * Uses runif and therefore has the same precision issue.
+ *
+ * @param n length of the resulting array
+ * @param min lower limit of the distribution
+ * @param max upper limit of the distribution
+ *
+ * @return an array of random values between min and max
+ */
 pub fn runif_n(n int, min f64, max f64) []f64 {
 
   mut res := [f64(0)].repeat(n)
@@ -22,7 +45,17 @@ pub fn runif_n(n int, min f64, max f64) []f64 {
   return res
 }
 
-// Box Muller
+/**
+ * rnorm - random number generator with a normal distribution
+ *
+ * Uses the Box Muller transform algorithm to get normally distributed
+ * random numbers from the uniform rand.next().
+ *
+ * @param mean mean of the underlying normal distribution
+ * @param sd standard deviation of the underlying normal distribution
+ *
+ * @return a random value sampled from the defined normal distribution
+ */
 pub fn rnorm(mean f64, sd f64) f64 {
 
   mut x := 0.0
@@ -47,6 +80,17 @@ pub fn rnorm(mean f64, sd f64) f64 {
   return res
 }
 
+/**
+ * rnorm_n - rnorm but for an array of random values
+ *
+ * Uses rnorm.
+ *
+ * @param n length of the resulting array
+ * @param mean mean of the underlying normal distribution
+ * @param sd standard deviation of the underlying normal distribution
+ *
+ * @return an array of random values sampled from the defined normal distribution
+ */
 pub fn rnorm_n(n int, mean f64, sd f64) []f64 {
 
   mut res := [f64(0)].repeat(n)

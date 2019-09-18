@@ -1,8 +1,10 @@
 language: minimal
 
 before_install:
+  # move module files to module directory
   - mkdir module
-  - mv . module/
+  - find . -maxdepth 1 -type f -print0 | xargs -0 mv -t ./module
+  # download and compile v
   - wget https://github.com/vlang/v/archive/master.zip
   - unzip master.zip
   - cd v-master
@@ -10,5 +12,7 @@ before_install:
   - cd ..
 
 script:
+  # build module
   - v-master/v build module module/
-  - v-master/v run module/test/test.v
+  # run test scripts
+  - v-master/v run test/test.v

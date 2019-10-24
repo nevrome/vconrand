@@ -4,6 +4,12 @@ import rand
 import math
 
 /**
+ * ###########################
+ * ########## runif ##########
+ * ###########################
+ */
+
+/**
  * runif - random number generator with an uniform distribution
  *
  * The implemented solution most likely does not cover the full range
@@ -44,6 +50,12 @@ pub fn runif_n(n int, min f64, max f64) []f64 {
 
   return res
 }
+
+/**
+ * ###########################
+ * ########## rnorm ##########
+ * ###########################
+ */
 
 /**
  * rnorm - random number generator with a normal distribution
@@ -100,6 +112,13 @@ pub fn rnorm_n(n int, mean f64, sd f64) []f64 {
 
   return res
 }
+
+/**
+ * ###########################
+ * ########## rarb ###########
+ * ###########################
+ */
+
 
 /**
  * rarb_int - random number selector with an arbitrary distribution
@@ -169,6 +188,12 @@ pub fn rarb_int_n(n int, arr[] int, freq[] int) []int {
   return res
 }
 
+/**
+ * ############################
+ * ########## sample ##########
+ * ############################
+ */
+
 pub fn sample_int(arr[] int, size int) []int {
 
   mut res := [0].repeat(size)
@@ -179,3 +204,4 @@ pub fn sample_int(arr[] int, size int) []int {
   return res
 
 }
+

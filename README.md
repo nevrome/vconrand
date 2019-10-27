@@ -30,7 +30,7 @@ fn main() {
   vconrand.rnorm(14.81, 2.73)
   vconrand.rnorm_n(5, 14.81, 2.73)
 
-  // random integer from an arbitrary distribution_function
+  // random integer from an arbitrary distribution
   mut arr := [0].repeat(200)
 	for i := 0; i < 200; i++ {
 		arr[i] = i
@@ -42,6 +42,12 @@ fn main() {
   vconrand.rarb_int(arr, freq).str()
   vconrand.rarb_int_n(5, arr, freq).str()
 
+}
+
+fn distribution_function(i int) int {
+  x := f64(i)
+  res := 10.0 * math.sin(0.1 * (x - 0.1)) + 10.0
+  return int(math.round(res))
 }
 ```
 

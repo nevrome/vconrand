@@ -30,6 +30,18 @@ fn main() {
   vconrand.rnorm(14.81, 2.73)
   vconrand.rnorm_n(5, 14.81, 2.73)
 
+  // random integer from an arbitrary distribution_function
+  mut arr := [0].repeat(200)
+	for i := 0; i < 200; i++ {
+		arr[i] = i
+	}
+  mut freq := [0].repeat(200)
+  for i := 0; i < 200; i++ {
+    freq[i] = distribution_function(i)
+  }
+  vconrand.rarb_int(arr, freq).str()
+  vconrand.rarb_int_n(5, arr, freq).str()
+
 }
 ```
 

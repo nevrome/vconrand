@@ -132,10 +132,7 @@ pub fn rnorm_n(n int, mean f64, sd f64) []f64 {
  *
  * @return a random value sampled from arr[] based on the distribution in freq[]
  */
-pub fn rarb_int(arr[] int, freq[] int) ?int {
-    if arr.len != freq.len {
-      return error('arr and freq have to have the same length')
-    }
+pub fn rarb_int(arr[] int, freq[] int) int {
     // get length
     l := arr.len
 		// Create and fill prefix array

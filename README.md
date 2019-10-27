@@ -32,9 +32,9 @@ fn main() {
 
   // random integer from an arbitrary distribution
   mut arr := [0].repeat(200)
-	for i := 0; i < 200; i++ {
-		arr[i] = i
-	}
+  for i := 0; i < 200; i++ {
+    arr[i] = i
+  }
   mut freq := [0].repeat(200)
   for i := 0; i < 200; i++ {
     freq[i] = distribution_function(i)

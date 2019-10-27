@@ -17,6 +17,7 @@ $ vpm get https://github.com/nevrome/vconrand vconrand
 import vconrand
 import rand
 import time
+import math
 
 fn main() {
 

@@ -40,9 +40,10 @@ fn main() {
   )
 
   // sample
-  println('vconrand.sample_int(arr, 5) = ' +
-    vconrand.sample_int(arr, 5).str()
-  )
+  arr2 := [0].repeat(10)
+  println(vconrand.sample(arr2, 5).str())
+  arr3 := ["test"].repeat(10)
+  println(vconrand.sample(arr3, 5).str())
 
 }
 

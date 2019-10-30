@@ -191,7 +191,7 @@ pub fn rarb_int_n(n int, arr[] int, freq[] int) []int {
  * ############################
  */
 
-fn sample<T>(arr[] T, size int) []T {
+pub fn sample<T>(arr[] T, size int) []T {
 
   mut res := [arr[1]].repeat(size)
   for i := 0; i < size; i++ {

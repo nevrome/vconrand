@@ -191,9 +191,9 @@ pub fn rarb_int_n(n int, arr[] int, freq[] int) []int {
  * ############################
  */
 
-pub fn sample_int(arr[] int, size int) []int {
+pub fn sample<T>(arr[] T, size int) []T {
 
-  mut res := [0].repeat(size)
+  mut res := [arr[1]].repeat(size)
   for i := 0; i < size; i++ {
     res[i] = arr[rand.next(arr.len)]
   }

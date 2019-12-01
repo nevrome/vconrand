@@ -13,6 +13,6 @@ before_install:
 
 script:
   # build module
-  - v-master/v build module vconrand
+  - v-master/v build module $PWD/vconrand
   # run test scripts
   - v-master/v run test/test.v

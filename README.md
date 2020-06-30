@@ -1,3 +1,7 @@
+:exclamation: **This package is not up to date. Please use [Delta456/random](https://github.com/Delta456/random)**
+
+***
+
 [![Build Status](https://www.travis-ci.org/nevrome/vconrand.svg?branch=master)](https://www.travis-ci.org/nevrome/vconrand)
 
 # vconrand: Convenient random number generators for V
